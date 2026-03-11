@@ -11,8 +11,11 @@ from html.parser import HTMLParser
 from urllib.parse import urljoin, urlparse
 
 # === 設定 ===
-BASE_URL = sys.argv[1] if len(sys.argv) > 1 else "https://6t98mqn5-5500.asse.devtunnels.ms"
-BASE_URL = BASE_URL.rstrip("/")
+_raw = sys.argv[1] if len(sys.argv) > 1 else "https://lawrence565.github.io/test_toolbox"
+# 若使用者帶入完整的 index.html 路徑，自動截斷到目錄層
+if _raw.endswith("/index.html"):
+    _raw = _raw[: -len("/index.html")]
+BASE_URL = _raw.rstrip("/")
 TIMEOUT = 15
 HEADERS = {
     "User-Agent": "SitemapCrawler/1.0 (MVP Test Bot)",
@@ -125,6 +128,11 @@ def main():
     print(f"  HTTP {resp.status_code} | Content-Length: {len(resp.text)} bytes")
     if resp.history:
         print(f"  重導向鏈: {' → '.join(r.url for r in resp.history)} → {resp.url}")
+
+    if resp.status_code >= 400:
+        print(f"  ❌ 首頁回傳 {resp.status_code}，請確認 BASE_URL 是否正確")
+        print(f"     實際請求 URL: {resp.url}")
+        return
 
     is_blocked, sigs = detect_interstitial(resp.text, resp.url)
     if is_blocked:
