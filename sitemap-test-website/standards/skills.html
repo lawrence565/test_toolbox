@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills — Claude AI</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <nav>
+      <a class="brand" href="../index.html">Claude AI 介紹網站</a>
+      <a href="../products/index.html">產品系列</a>
+      <a href="../features/index.html">核心功能</a>
+      <a href="index.html">開放標準</a>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="../index.html">首頁</a><span class="sep">/</span
+      ><a href="index.html">開放標準</a><span class="sep">/</span>Skills
+    </div>
+
+    <main>
+      <h1>Skills（技能模組）</h1>
+      <p>
+        Skills 是 Copilot / Claude 編輯器整合中的一項可擴充機制，允許使用者為 AI
+        助手定義特定領域的專業知識模組。每個 Skill
+        封裝了一組指令與上下文，讓模型在觸發時能夠以領域專家的方式執行任務。
+      </p>
+
+      <h2>Skill 是什麼</h2>
+      <p>
+        Skill 本質上是一份結構化的指令文件（通常命名為
+        <code>SKILL.md</code>），包含：
+      </p>
+      <ul>
+        <li>
+          <strong>名稱與描述：</strong>定義 Skill 的用途與觸發條件，讓 AI
+          知道何時該使用此技能。
+        </li>
+        <li>
+          <strong>詳細指令：</strong
+          >具體的執行步驟、規則、輸出格式等，引導模型完成特定類型的任務。
+        </li>
+        <li>
+          <strong>工具限制：</strong>可指定 Skill 執行時允許或禁止使用的工具（如
+          Terminal、檔案編輯等）。
+        </li>
+        <li>
+          <strong>適用範圍：</strong>透過
+          <code>applyTo</code> 模式匹配特定檔案類型或專案結構。
+        </li>
+      </ul>
+
+      <h2>Skill 的結構範例</h2>
+      <pre><code># SKILL.md
+
+---
+name: code-review
+description: |
+  Review code changes for quality, security, and performance.
+  Trigger when user asks to "review", "audit", or "check" code.
+tools:
+  - read_file
+  - grep_search
+  - semantic_search
+---
+
+## 指令
+
+1. 先閱讀目標檔案的完整內容
+2. 檢查安全性問題（OWASP Top 10）
+3. 檢查效能瓶頸
+4. 檢查程式碼風格一致性
+5. 產出結構化的審查報告</code></pre>
+
+      <h2>Skill 與其他機制的比較</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>機制</th>
+            <th>範圍</th>
+            <th>觸發方式</th>
+            <th>用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Skills</td>
+            <td>特定任務</td>
+            <td>AI 自動匹配或使用者指定</td>
+            <td>封裝領域專業知識</td>
+          </tr>
+          <tr>
+            <td><a href="system-prompts.html">System Prompts</a></td>
+            <td>全域</td>
+            <td>每次對話自動載入</td>
+            <td>定義模型基礎行為</td>
+          </tr>
+          <tr>
+            <td>Agents</td>
+            <td>特定角色</td>
+            <td>使用者選擇或子代理呼叫</td>
+            <td>定義完整的 AI 角色模式</td>
+          </tr>
+          <tr>
+            <td><a href="mcp.html">MCP Tools</a></td>
+            <td>外部服務</td>
+            <td>AI 判斷後呼叫</td>
+            <td>連接外部資料與功能</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>常見的 Skill 類型</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>程式碼審查</h3>
+          <p>
+            針對 Pull Request
+            或特定檔案進行安全性、效能與風格的自動化審查，產出結構化的審查報告。
+          </p>
+        </div>
+        <div class="card">
+          <h3>測試生成</h3>
+          <p>
+            根據既有程式碼自動生成對應的單元測試，遵循專案的測試框架與命名慣例。
+          </p>
+        </div>
+        <div class="card">
+          <h3>文件撰寫</h3>
+          <p>以特定格式（如 JSDoc、Sphinx）為函式、模組或 API 端點產出文件。</p>
+        </div>
+        <div class="card">
+          <h3>工作流自動化</h3>
+          <p>
+            定義多步驟的開發流程，如 Spec-Driven Development、月報生成、Issue
+            分析等。
+          </p>
+        </div>
+      </div>
+
+      <h2>Skill 的放置位置</h2>
+      <p>Skills 可以放在不同層級，影響其作用範圍：</p>
+      <ul>
+        <li>
+          <strong>使用者層級</strong
+          >（<code>~/.copilot/skills/</code>）：跨所有專案生效，適合個人通用的技能。
+        </li>
+        <li>
+          <strong>專案層級</strong>（<code>.copilot/skills/</code> 或
+          <code>.github/copilot/skills/</code
+          >）：僅在該專案中生效，適合團隊共享的專案特定技能。
+        </li>
+      </ul>
+
+      <h2>與 MCP 的協作</h2>
+      <p>
+        Skills 可以搭配 <a href="mcp.html">MCP</a>
+        工具使用。例如，一個「Jira 月報」Skill 可以呼叫 Jira MCP Server
+        取得資料，再根據 Skill 中定義的格式規範產出報告。這種組合讓 AI
+        同時具備「知道怎麼做」（Skill）和「能夠執行」（MCP Tool）的能力。
+      </p>
+
+      <h3>相關頁面</h3>
+      <ul>
+        <li><a href="index.html">返回開放標準總覽</a></li>
+        <li><a href="mcp.html">Model Context Protocol — 工具連接標準</a></li>
+        <li>
+          <a href="system-prompts.html">System Prompts — 系統提示詞</a>
+        </li>
+        <li>
+          <a href="model-spec.html">Model Spec — 模型行為規格</a>
+        </li>
+        <li>
+          <a href="../features/tool-use.html">Tool Use — 工具呼叫功能</a>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      &copy; 2026 Claude AI 介紹網站 — 僅供 Sitemap 爬蟲測試用途 |
+      <a href="../sitemap.xml">Sitemap</a>
+    </footer>
+  </body>
+</html>
