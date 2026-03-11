@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>核心功能 — Claude AI</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <nav>
+      <a class="brand" href="../index.html">Claude AI 介紹網站</a>
+      <a href="../products/index.html">產品系列</a>
+      <a href="index.html">核心功能</a>
+      <a href="../standards/index.html">開放標準</a>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="../index.html">首頁</a><span class="sep">/</span>核心功能
+    </div>
+
+    <main>
+      <h1>Claude 核心功能</h1>
+      <p>
+        除了基本的文字生成與理解能力之外，Claude
+        提供多項進階功能，讓模型能夠處理更複雜的任務場景。這些功能大幅拓展了 AI
+        助手的應用邊界。
+      </p>
+
+      <h2>功能一覽</h2>
+      <div class="cards">
+        <div class="card">
+          <h3><a href="extended-thinking.html">Extended Thinking</a></h3>
+          <p>
+            讓 Claude
+            在回答之前進行更深層的內部推理過程，適合數學證明、程式除錯、複雜邏輯分析等需要多步驟思考的任務。
+          </p>
+        </div>
+        <div class="card">
+          <h3><a href="computer-use.html">Computer Use</a></h3>
+          <p>
+            Claude
+            可以直接操作電腦桌面環境，包括移動滑鼠、點擊按鈕、輸入文字與截取螢幕畫面，實現端到端的自動化工作流程。
+          </p>
+        </div>
+        <div class="card">
+          <h3><a href="tool-use.html">Tool Use (Function Calling)</a></h3>
+          <p>
+            透過結構化的工具定義，Claude 可以呼叫外部
+            API、查詢資料庫、執行運算等操作，將 AI 能力無縫整合至既有系統。
+          </p>
+        </div>
+      </div>
+
+      <h2>功能與模型對應</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>功能</th>
+            <th>Opus</th>
+            <th>Sonnet</th>
+            <th>Haiku</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="extended-thinking.html">Extended Thinking</a></td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td><a href="computer-use.html">Computer Use</a></td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><a href="tool-use.html">Tool Use</a></td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>整合方式</h2>
+      <p>
+        所有進階功能皆可透過 Anthropic Messages API 啟用。開發者只需在 API
+        請求中加入對應的參數設定即可。詳細的 API 規格請參閱
+        <a href="../standards/index.html">開放標準</a> 區塊。
+      </p>
+
+      <h3>相關連結</h3>
+      <ul>
+        <li>
+          <a href="../products/index.html">產品系列</a> — 了解各模型的定位與規格
+        </li>
+        <li>
+          <a href="../standards/mcp.html">Model Context Protocol</a> —
+          標準化的工具連接協定
+        </li>
+        <li>
+          <a href="../standards/system-prompts.html">System Prompts</a> — Claude
+          的公開系統提示詞
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      &copy; 2026 Claude AI 介紹網站 — 僅供 Sitemap 爬蟲測試用途 |
+      <a href="../sitemap.xml">Sitemap</a>
+    </footer>
+  </body>
+</html>

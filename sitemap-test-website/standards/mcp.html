@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model Context Protocol (MCP) — Claude AI</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <nav>
+      <a class="brand" href="../index.html">Claude AI 介紹網站</a>
+      <a href="../products/index.html">產品系列</a>
+      <a href="../features/index.html">核心功能</a>
+      <a href="index.html">開放標準</a>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="../index.html">首頁</a><span class="sep">/</span
+      ><a href="index.html">開放標準</a><span class="sep">/</span>Model Context
+      Protocol
+    </div>
+
+    <main>
+      <h1>Model Context Protocol (MCP)</h1>
+      <p>
+        Model Context Protocol（MCP）是由 Anthropic 於 2024
+        年底發起的開放通訊協定，旨在建立 AI
+        模型與外部資料來源、工具之間的標準化連接方式。MCP 經常被比喻為 AI
+        領域的「USB-C」— 一個通用的介面標準。
+      </p>
+
+      <h2>設計動機</h2>
+      <p>
+        在 MCP 出現之前，每個 AI
+        應用都需要針對每個外部服務建立專屬的整合方案，這導致了大量重複工作與碎片化的生態系。MCP
+        透過標準化的協定解決了以下問題：
+      </p>
+      <ul>
+        <li>
+          <strong>N×M 問題：</strong>N 個 AI 應用 × M 個工具 = N×M 個自訂整合 →
+          MCP 將其簡化為 N+M。
+        </li>
+        <li>
+          <strong>重複建設：</strong
+          >每次整合都要重新設計認證、錯誤處理、資料格式等基礎架構。
+        </li>
+        <li>
+          <strong>互通性不足：</strong>不同 AI 平台的工具定義格式互不相容。
+        </li>
+      </ul>
+
+      <h2>核心架構</h2>
+      <p>MCP 採用客戶端 - 伺服器（Client-Server）架構：</p>
+      <table>
+        <tr>
+          <th>元件</th>
+          <th>角色</th>
+          <th>說明</th>
+        </tr>
+        <tr>
+          <td>MCP Host</td>
+          <td>宿主應用</td>
+          <td>AI 應用程式（如 Claude Desktop、IDE 外掛）</td>
+        </tr>
+        <tr>
+          <td>MCP Client</td>
+          <td>客戶端</td>
+          <td>在 Host 內部，負責維護與 Server 的連接</td>
+        </tr>
+        <tr>
+          <td>MCP Server</td>
+          <td>伺服器</td>
+          <td>對外暴露工具、資源與提示詞的輕量服務</td>
+        </tr>
+      </table>
+
+      <h2>三大核心功能</h2>
+      <ul>
+        <li>
+          <strong>Tools（工具）：</strong>讓 AI
+          模型呼叫外部功能，例如查詢資料庫、操作檔案系統。與 Claude 的
+          <a href="../features/tool-use.html">Tool Use</a> 功能緊密整合。
+        </li>
+        <li>
+          <strong>Resources（資源）：</strong>讓 AI
+          模型讀取外部資料，例如文件內容、API 回應。
+        </li>
+        <li>
+          <strong>Prompts（提示詞範本）：</strong
+          >預定義的提示詞模板，可跨應用共享與重用。
+        </li>
+      </ul>
+
+      <h2>傳輸方式</h2>
+      <p>MCP 支援多種傳輸協定：</p>
+      <ul>
+        <li>
+          <strong>stdio：</strong>透過標準輸入/輸出進行本地通訊，適合本機工具。
+        </li>
+        <li>
+          <strong>Streamable HTTP：</strong>透過 HTTP
+          進行遠端通訊，支援串流回應。
+        </li>
+      </ul>
+
+      <h2>生態系現況</h2>
+      <p>MCP 已獲得廣泛的產業支持，以下是部分已整合 MCP 的平台與工具：</p>
+      <ul>
+        <li>Claude Desktop — Anthropic 官方桌面應用</li>
+        <li>VS Code / GitHub Copilot — 微軟的開發環境</li>
+        <li>Cursor — AI 原生程式碼編輯器</li>
+        <li>Zed — 高效能程式碼編輯器</li>
+        <li>Sourcegraph — 程式碼搜尋與智慧分析平台</li>
+      </ul>
+
+      <h3>相關頁面</h3>
+      <ul>
+        <li><a href="index.html">返回開放標準總覽</a></li>
+        <li><a href="model-spec.html">Model Spec — 模型行為規格</a></li>
+        <li>
+          <a href="system-prompts.html">System Prompts — 公開系統提示詞</a>
+        </li>
+        <li>
+          <a href="../features/tool-use.html"
+            >Tool Use — Claude 的工具呼叫功能</a
+          >
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      &copy; 2026 Claude AI 介紹網站 — 僅供 Sitemap 爬蟲測試用途 |
+      <a href="../sitemap.xml">Sitemap</a>
+    </footer>
+  </body>
+</html>
