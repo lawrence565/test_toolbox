@@ -1,116 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- L1: 首頁 -->
   <url>
-    <loc>https://lawrence565.github.io/test_toolbox/index.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/index.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <!-- L2: 產品系列 -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/products/index.html</loc>
-    <lastmod>2026-03-11</lastmod>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/products/index.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- L2: 核心功能 -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/features/index.html</loc>
-    <lastmod>2026-03-11</lastmod>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/features/index.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- L2: 開放標準 -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/standards/index.html</loc>
-    <lastmod>2026-03-11</lastmod>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/standards/index.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- L3: 產品 — Claude Opus -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/products/claude-opus.html</loc>
-    <lastmod>2026-03-11</lastmod>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/products/claude-opus.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/products/claude-sonnet.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/products/claude-haiku.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/features/extended-thinking.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/features/computer-use.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/features/tool-use.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/standards/mcp.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/standards/model-spec.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/standards/system-prompts.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://lw92yq-ip-123-192-41-146.tunnelmole.net/standards/skills.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- L3: 產品 — Claude Sonnet -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/products/claude-sonnet.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- L3: 產品 — Claude Haiku -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/products/claude-haiku.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- L3: 功能 — Extended Thinking -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/features/extended-thinking.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- L3: 功能 — Computer Use -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/features/computer-use.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- L3: 功能 — Tool Use -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/features/tool-use.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- L3: 標準 — Model Context Protocol -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/standards/mcp.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- L3: 標準 — Model Spec -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/standards/model-spec.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- L3: 標準 — System Prompts -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/standards/system-prompts.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- L3: 標準 — Skills -->
-  <url>
-    <loc>https://lawrence565.github.io/test_toolbox/standards/skills.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
 </urlset>

@@ -85,8 +85,12 @@ def parse_sitemap(xml_text, base_url):
             loc = url_elem.find("sm:loc", ns)
             priority = url_elem.find("sm:priority", ns)
             if loc is not None and loc.text:
+                raw_loc = loc.text.strip()
+                parsed_loc = urlparse(raw_loc)
+                resolved_loc = raw_loc if parsed_loc.scheme else urljoin(f"{base_url}/", raw_loc)
                 urls.append({
-                    "loc": loc.text.strip(),
+                    "loc": resolved_loc,
+                    "raw_loc": raw_loc,
                     "priority": priority.text.strip() if priority is not None else "—",
                 })
     except ET.ParseError as e:
@@ -176,7 +180,7 @@ def main():
             sitemap_urls = parse_sitemap(resp_sitemap.text, BASE_URL)
             print(f"  ✅ 解析成功，共 {len(sitemap_urls)} 個 URL")
             for u in sitemap_urls:
-                print(f"     [{u['priority']}] {u['loc']}")
+                print(f"     [{u['priority']}] {u['raw_loc']} -> {u['loc']}")
     else:
         print(f"  HTTP {resp_sitemap.status_code} (未找到)")
 
@@ -185,9 +189,7 @@ def main():
     all_urls = set()
     if sitemap_urls:
         for u in sitemap_urls:
-            # 把 sitemap 中的 example.com 替換為實際 base URL
-            real_url = u["loc"].replace("https://example.com", BASE_URL)
-            all_urls.add(real_url)
+            all_urls.add(u["loc"])
     # 從首頁 HTML 提取連結
     if not is_blocked:
         discovered = extract_links(resp.text, f"{BASE_URL}/")
